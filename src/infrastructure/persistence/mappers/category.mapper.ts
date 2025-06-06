@@ -10,9 +10,8 @@ type CategoryRow = {
 export class CategoryMapper {
     public static toDomain(raw: CategoryRow): Category {
         const name = new CategoryName(raw.name);
-        const category = Category.create(name, raw.parentId);
         
-        Object.assign(category, { id: raw.id });
+        const category = Category.create(raw.id, name, raw.parentId);
 
         return category;
     }
@@ -21,7 +20,7 @@ export class CategoryMapper {
         return {
             id: category.id,
             name: category.name.value,
-            parentId: category.parentId,
+            parentId: category.parentId, 
         };
     }
 }

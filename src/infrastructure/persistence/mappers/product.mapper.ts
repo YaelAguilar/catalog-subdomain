@@ -19,9 +19,14 @@ export class ProductMapper {
     const sku = new SKU(raw.sku);
     const description = new ProductDescription(raw.description);
 
-    const product = Product.create(raw.name, description, price, sku, raw.categoryId);
-    
-    Object.assign(product, { id: raw.id });
+    const product = Product.create(
+      raw.id,
+      raw.name,
+      description,
+      price,
+      sku,
+      raw.categoryId
+    );
 
     return product;
   }

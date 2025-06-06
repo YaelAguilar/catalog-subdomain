@@ -14,7 +14,6 @@ export const CategorySchema = new EntitySchema({
     parentId: {
       type: "varchar",
       nullable: true,
-      name: "parent_id",
     },
   },
 });
