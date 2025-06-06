@@ -1,5 +1,5 @@
 import { Money } from "../value-objects/money.vo";
-import { SKU } from "../value-objects/sku.vo";
+import { SKU } from "../value-objects/product-sku.vo";
 
 export class Product {
     readonly id: string;
