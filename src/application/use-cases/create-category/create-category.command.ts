@@ -1,4 +1,4 @@
 export interface CreateCategoryCommand {
   name: string;
-  parentId?: string;
+  parentId?: string | null;
 }

@@ -15,14 +15,8 @@ export class CreateCategoryUseCase {
     }
     
     const categoryName = new CategoryName(command.name);
-    
-    const category = Category.create(
-      categoryName,
-      command.parentId || null
-    );
-
+    const category = Category.create(categoryName, command.parentId || null);
     await this.categoryRepository.save(category);
-
     return category;
   }
 }
