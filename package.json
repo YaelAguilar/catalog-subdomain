@@ -1,15 +1,34 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "catalog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YaelAguilar/catalog-subdomain.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YaelAguilar/catalog-subdomain/issues"
+  },
+  "homepage": "https://github.com/YaelAguilar/catalog-subdomain#readme",
+  "description": "",
   "devDependencies": {
     "@types/express": "^5.0.2",
     "@types/node": "^22.15.30",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
   }
 }
