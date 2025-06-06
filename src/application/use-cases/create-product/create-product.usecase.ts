@@ -13,7 +13,8 @@ export class CreateProductUseCase {
   ) {}
 
   async execute(command: CreateProductCommand): Promise<Product> {
-    const existingProduct = await this.productRepository.findBySku(new SKU(command.sku));
+    const sku = new SKU(command.sku);
+    const existingProduct = await this.productRepository.findBySku(sku);
     if (existingProduct) {
       throw new Error("A product with this SKU already exists.");
     }
@@ -24,7 +25,6 @@ export class CreateProductUseCase {
     }
     
     const price = new Money(command.price, command.currency);
-    const sku = new SKU(command.sku);
     const description = new ProductDescription(command.description);
 
     const product = Product.create(
@@ -36,7 +36,6 @@ export class CreateProductUseCase {
     );
 
     await this.productRepository.save(product);
-
     return product;
   }
 }
