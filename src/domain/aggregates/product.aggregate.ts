@@ -1,7 +1,6 @@
 import { Money } from "../value-objects/money.vo.js";
 import { SKU } from "../value-objects/product-sku.vo.js";
 import { ProductDescription } from "../value-objects/product-description.vo.js";
-import { randomUUID } from "crypto";
 
 export class Product {
   readonly id: string;
@@ -11,14 +10,7 @@ export class Product {
   public sku: SKU;
   public categoryId: string;
 
-  private constructor(
-    id: string,
-    name: string,
-    description: ProductDescription,
-    price: Money,
-    sku: SKU,
-    categoryId: string
-  ) {
+  private constructor(id: string, name: string, description: ProductDescription, price: Money, sku: SKU, categoryId: string) {
     this.id = id;
     this.name = name;
     this.description = description;
@@ -27,17 +19,10 @@ export class Product {
     this.categoryId = categoryId;
   }
 
-  public static create(
-    name: string,
-    description: ProductDescription,
-    price: Money,
-    sku: SKU,
-    categoryId: string
-  ): Product {
+  public static create(id: string, name: string, description: ProductDescription, price: Money, sku: SKU, categoryId: string): Product {
     if (!name || name.length < 3) {
       throw new Error("Product name must be at least 3 characters long.");
     }
-    const id = randomUUID();
     return new Product(id, name, description, price, sku, categoryId);
   }
 

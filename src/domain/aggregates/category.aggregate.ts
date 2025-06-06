@@ -1,5 +1,4 @@
 import { CategoryName } from "../value-objects/category-name.vo.js";
-import { randomUUID } from "crypto";
 
 export class Category {
   readonly id: string;
@@ -12,8 +11,7 @@ export class Category {
     this.parentId = parentId;
   }
 
-  public static create(name: CategoryName, parentId: string | null = null): Category {
-    const id = randomUUID();
+  public static create(id: string, name: CategoryName, parentId: string | null = null): Category {
     return new Category(id, name, parentId);
   }
 

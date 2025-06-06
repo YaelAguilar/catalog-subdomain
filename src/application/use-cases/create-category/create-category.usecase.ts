@@ -2,9 +2,13 @@ import { ICategoryRepository } from "../../../domain/repositories/category.repos
 import { Category } from "../../../domain/aggregates/category.aggregate.js";
 import { CategoryName } from "../../../domain/value-objects/category-name.vo.js";
 import { CreateCategoryCommand } from "./create-category.command.js";
+import { IIdGenerator } from "../../contracts/id-generator.interface.js";
 
 export class CreateCategoryUseCase {
-  constructor(private readonly categoryRepository: ICategoryRepository) {}
+  constructor(
+    private readonly categoryRepository: ICategoryRepository,
+    private readonly idGenerator: IIdGenerator
+  ) {}
 
   async execute(command: CreateCategoryCommand): Promise<Category> {
     if (command.parentId) {
@@ -15,7 +19,15 @@ export class CreateCategoryUseCase {
     }
     
     const categoryName = new CategoryName(command.name);
-    const category = Category.create(categoryName, command.parentId || null);
+    
+    const id = this.idGenerator.generate(); 
+
+    const category = Category.create(
+      id,
+      categoryName, 
+      command.parentId || null
+    );
+
     await this.categoryRepository.save(category);
     return category;
   }
