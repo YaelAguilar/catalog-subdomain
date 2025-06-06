@@ -1,0 +1,42 @@
+import { IProductRepository } from "../../../domain/repositories/product.repository";
+import { Product } from "../../../domain/aggregates/product.aggregate";
+import { Money } from "../../../domain/value-objects/money.vo";
+import { SKU } from "../../../domain/value-objects/product-sku.vo";
+import { ProductDescription } from "../../../domain/value-objects/product-description.vo";
+import { ICategoryRepository } from "../../../domain/repositories/category.repository";
+import { CreateProductCommand } from "./create-product.command";
+
+export class CreateProductUseCase {
+  constructor(
+    private readonly productRepository: IProductRepository,
+    private readonly categoryRepository: ICategoryRepository
+  ) {}
+
+  async execute(command: CreateProductCommand): Promise<Product> {
+    const existingProduct = await this.productRepository.findBySku(new SKU(command.sku));
+    if (existingProduct) {
+      throw new Error("A product with this SKU already exists.");
+    }
+
+    const category = await this.categoryRepository.findById(command.categoryId);
+    if (!category) {
+      throw new Error("Category not found.");
+    }
+    
+    const price = new Money(command.price, command.currency);
+    const sku = new SKU(command.sku);
+    const description = new ProductDescription(command.description);
+
+    const product = Product.create(
+      command.name,
+      description,
+      price,
+      sku,
+      category.id
+    );
+
+    await this.productRepository.save(product);
+
+    return product;
+  }
+}
