@@ -1,5 +1,5 @@
-import { IProductRepository } from "../../../domain/repositories/product.repository";
-import { DeleteProductCommand } from "./delete-product.command";
+import { IProductRepository } from "../../../domain/repositories/product.repository.js";
+import { DeleteProductCommand } from "./delete-product.command.js";
 
 export class DeleteProductUseCase {
   constructor(private readonly productRepository: IProductRepository) {}

@@ -1,7 +1,7 @@
-import { ICategoryRepository } from "../../../domain/repositories/category.repository";
-import { Category } from "../../../domain/aggregates/category.aggregate";
-import { CategoryName } from "../../../domain/value-objects/category-name.vo";
-import { CreateCategoryCommand } from "./create-category.command";
+import { ICategoryRepository } from "../../../domain/repositories/category.repository.js";
+import { Category } from "../../../domain/aggregates/category.aggregate.js";
+import { CategoryName } from "../../../domain/value-objects/category-name.vo.js";
+import { CreateCategoryCommand } from "./create-category.command.js";
 
 export class CreateCategoryUseCase {
   constructor(private readonly categoryRepository: ICategoryRepository) {}

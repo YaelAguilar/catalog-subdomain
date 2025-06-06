@@ -1,17 +1,17 @@
 {
-	"compilerOptions": {
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
-		"moduleDetection": "force",
-		// Ignore module structure
-		"module": "esnext",
-    "target": "esnext",
-		// Allow JS files to be imported from TS and vice versa
-		"allowJs": true,
-		// Use correct ESM import behavior
-		"esModuleInterop": true,
-		// Disallow features that require cross-file awareness
-		"isolatedModules": true,
-	},
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

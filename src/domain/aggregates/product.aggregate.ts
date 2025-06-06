@@ -1,6 +1,6 @@
-import { Money } from "../value-objects/money.vo";
-import { SKU } from "../value-objects/product-sku.vo";
-import { ProductDescription } from "../value-objects/product-description.vo";
+import { Money } from "../value-objects/money.vo.js";
+import { SKU } from "../value-objects/product-sku.vo.js";
+import { ProductDescription } from "../value-objects/product-description.vo.js";
 import { randomUUID } from "crypto";
 
 export class Product {

@@ -1,6 +1,6 @@
-import { ICategoryRepository } from "../../../domain/repositories/category.repository";
-import { CategoryName } from "../../../domain/value-objects/category-name.vo";
-import { UpdateCategoryCommand } from "./update-category.command";
+import { ICategoryRepository } from "../../../domain/repositories/category.repository.js";
+import { CategoryName } from "../../../domain/value-objects/category-name.vo.js";
+import { UpdateCategoryCommand } from "./update-category.command.js";
 
 export class UpdateCategoryUseCase {
   constructor(private readonly categoryRepository: ICategoryRepository) {}

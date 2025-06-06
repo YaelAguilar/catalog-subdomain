@@ -1,5 +1,5 @@
-import { IProductRepository } from "../../../domain/repositories/product.repository";
-import { Product } from "../../../domain/aggregates/product.aggregate";
+import { IProductRepository } from "../../../domain/repositories/product.repository.js";
+import { Product } from "../../../domain/aggregates/product.aggregate.js";
 
 export class SearchProductsUseCase {
   constructor(private readonly productRepository: IProductRepository) {}

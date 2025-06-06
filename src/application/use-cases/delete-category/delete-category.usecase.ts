@@ -1,5 +1,5 @@
-import { ICategoryRepository } from "../../../domain/repositories/category.repository";
-import { DeleteCategoryCommand } from "./delete-category.command";
+import { ICategoryRepository } from "../../../domain/repositories/category.repository.js";
+import { DeleteCategoryCommand } from "./delete-category.command.js";
 
 export class DeleteCategoryUseCase {
   constructor(private readonly categoryRepository: ICategoryRepository) {}

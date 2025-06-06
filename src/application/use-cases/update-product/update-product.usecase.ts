@@ -1,8 +1,8 @@
-import { IProductRepository } from "../../../domain/repositories/product.repository";
-import { Money } from "../../../domain/value-objects/money.vo";
-import { ProductDescription } from "../../../domain/value-objects/product-description.vo";
-import { UpdateProductCommand } from "./update-product.command";
-import { ICategoryRepository } from "../../../domain/repositories/category.repository";
+import { IProductRepository } from "../../../domain/repositories/product.repository.js";
+import { Money } from "../../../domain/value-objects/money.vo.js";
+import { ProductDescription } from "../../../domain/value-objects/product-description.vo.js";
+import { UpdateProductCommand } from "./update-product.command.js";
+import { ICategoryRepository } from "../../../domain/repositories/category.repository.js";
 
 export class UpdateProductUseCase {
   constructor(

@@ -1,4 +1,4 @@
-import { CategoryName } from "../value-objects/category-name.vo";
+import { CategoryName } from "../value-objects/category-name.vo.js";
 import { randomUUID } from "crypto";
 
 export class Category {

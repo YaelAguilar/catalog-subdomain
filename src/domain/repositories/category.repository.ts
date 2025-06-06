@@ -1,4 +1,4 @@
-import { Category } from "../aggregates/category.aggregate";
+import { Category } from "../aggregates/category.aggregate.js";
 
 export interface ICategoryRepository {
   save(category: Category): Promise<void>;

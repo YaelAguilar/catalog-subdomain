@@ -1,5 +1,5 @@
-import { Product } from "../aggregates/product.aggregate";
-import { SKU } from "../value-objects/product-sku.vo";
+import { Product } from "../aggregates/product.aggregate.js";
+import { SKU } from "../value-objects/product-sku.vo.js";
 
 export interface IProductRepository {
   save(product: Product): Promise<void>;

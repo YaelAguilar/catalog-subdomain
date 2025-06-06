@@ -1,10 +1,10 @@
-import { IProductRepository } from "../../../domain/repositories/product.repository";
-import { Product } from "../../../domain/aggregates/product.aggregate";
-import { Money } from "../../../domain/value-objects/money.vo";
-import { SKU } from "../../../domain/value-objects/product-sku.vo";
-import { ProductDescription } from "../../../domain/value-objects/product-description.vo";
-import { ICategoryRepository } from "../../../domain/repositories/category.repository";
-import { CreateProductCommand } from "./create-product.command";
+import { IProductRepository } from "../../../domain/repositories/product.repository.js";
+import { Product } from "../../../domain/aggregates/product.aggregate.js";
+import { Money } from "../../../domain/value-objects/money.vo.js";
+import { SKU } from "../../../domain/value-objects/product-sku.vo.js";
+import { ProductDescription } from "../../../domain/value-objects/product-description.vo.js";
+import { ICategoryRepository } from "../../../domain/repositories/category.repository.js";
+import { CreateProductCommand } from "./create-product.command.js";
 
 export class CreateProductUseCase {
   constructor(

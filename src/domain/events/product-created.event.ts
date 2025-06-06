@@ -1,5 +1,5 @@
-import { DomainEvent } from "./base-domain.event";
-import { Money } from "../value-objects/money.vo";
+import { DomainEvent } from "./base-domain.event.js";
+import { Money } from "../value-objects/money.vo.js";
 
 export class ProductCreatedEvent extends DomainEvent {
   constructor(

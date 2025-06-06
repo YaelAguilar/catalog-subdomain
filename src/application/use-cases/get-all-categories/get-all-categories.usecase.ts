@@ -1,5 +1,5 @@
-import { ICategoryRepository } from "../../../domain/repositories/category.repository";
-import { Category } from "../../../domain/aggregates/category.aggregate";
+import { ICategoryRepository } from "../../../domain/repositories/category.repository.js";
+import { Category } from "../../../domain/aggregates/category.aggregate.js";
 
 export class GetAllCategoriesUseCase {
   constructor(private readonly categoryRepository: ICategoryRepository) {}
