@@ -22,6 +22,7 @@
   "homepage": "https://github.com/YaelAguilar/catalog-subdomain#readme",
   "description": "",
   "devDependencies": {
+    "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.2",
     "@types/node": "^22.15.30",
     "tsx": "^4.19.4",
