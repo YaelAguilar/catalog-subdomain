@@ -6,7 +6,6 @@ export class GetProductByIdUseCase {
   constructor(private readonly productRepository: IProductRepository) {}
 
   async execute(query: GetProductByIdQuery): Promise<Product | null> {
-    const product = await this.productRepository.findById(query.id);
-    return product;
+    return this.productRepository.findById(query.id);
   }
 }
