@@ -1,15 +1,19 @@
-import express from "express";
-import dotenv from "dotenv";
+import { bootstrap } from './presentation/server.js';
 
-dotenv.config();
+async function startServer() {
+  try {
+    console.log("Bootstrapping application...");
+    const app = await bootstrap();
 
-const app = express();
-const PORT = process.env.PORT;
+    const port = process.env.PORT;
+    app.listen(port, () => {
+      console.log(`Server is running and listening on http://localhost:${port}`);
+    });
 
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+  } catch (error) {
+    console.error("Failed to start the application:", error);
+    process.exit(1);
+  }
+}
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+startServer();
